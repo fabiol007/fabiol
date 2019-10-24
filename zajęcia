@@ -1,0 +1,80 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ewrewrwer
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] tab = new int[8] { 1, 2, 3, 4, 5, 6, 7, 8 };
+            for (int i = 0; i < tab.Length; i++)
+            {
+                //Console.Write(tab[i] +" ");
+                Console.Write("{0} ",tab[i]);
+            }
+
+            foreach (int value in tab)
+            {
+                Console.Write("{0} ",value);            
+            }
+            Console.WriteLine("\n");
+            int j = 0;
+            int size = tab.Length;
+            size--; 
+            foreach (int value in tab)
+            {
+                if(j==0)
+                {
+                    Console.WriteLine("pierwszy element: {0}", tab[0]);
+                }
+                else if(j == size)
+                {
+                    Console.WriteLine("ostatni element: {0}", tab[size]);
+                }
+                else
+                {
+                    Console.WriteLine("kolejny element: {0}", tab[j]);
+                }
+                j++;
+            }
+            Console.WriteLine("\nKolory:");
+            //utworz tablice n-elementową, której rozmiar podaje użytkownik z klawiatury. Użytkownik podaje kolory z klawiatury w formacie kolor1:...  , kolor2:...
+
+            string text;
+            byte count;
+            do
+            {                
+                Console.Write("ilość ulubionych koloroów:");
+                text = Console.ReadLine();
+            }while (byte.TryParse(text, out count) == false);
+            string[] colors = new string[count];
+            //Console.WriteLine("\nIlość ulubioncyh kolorów: {0}", colors.Length);
+            Console.WriteLine();
+            string color;
+            for (int i = 0; i < count; i++)
+            {
+                Console.Write("podaj kolor:");
+                color = Console.ReadLine();
+                colors[i] = color;
+
+
+            }
+
+            byte x = 0, y;
+            while(x < colors.Length)
+                
+            {
+                y = x;
+                y++;
+                Console.WriteLine("kolor{0}: {1}", y, colors[x]);
+                x++;
+            
+            }
+            Console.ReadKey();
+        }
+    }
+}
