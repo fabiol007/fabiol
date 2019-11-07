@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace dasfwegdsgasgf
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            uint x = 10;
+            try
+            {
+                Console.Write("podaj x: ");
+                string str = Console.ReadLine();
+                x = uint.Parse(str);
+            }
+            catch
+            {
+                Console.WriteLine("error");
+
+
+            }
+            finally
+            {
+                Console.WriteLine("x = {0}", x);
+            }
+
+
+            //###################################
+
+
+
+
+            switch (x)
+            {
+                case 1:
+                    Console.WriteLine("poniedziałek"); ;
+                    break;
+                case 2:
+                    Console.WriteLine("wtorek");
+                    break;
+                case 6:
+                    throw new System.Exception("masz już weekend, zła wartość");
+                    break;
+                case 7:
+                    throw new System.Exception("Niedziela, błędnie podana wartość");
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("liczba powinna być z zakresy od 1-5");
+                        break;
+            }
+
+            //napisz kalkulator z zabezpieczeniami
+
+
+            Console.ReadKey();
+        }
+    }
+}
