@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace sadasdasgdsfgdgwg
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            uint number;
+            while(true)
+            {
+                Console.Write("wprowadź liczbę całkowitą: ");
+                
+                /*
+                try
+                {
+                    x = Console.ReadLine();
+                }
+                catch (OutOfMemoryException)
+                {
+                    Console.WriteLine("pamięć");
+                }
+                */
+                try
+                {
+                    string x = Console.ReadLine();
+                    number = uint.Parse(x);
+                    break;
+
+                }
+                catch (FormatException)
+                {
+
+                    Console.WriteLine("wprowadź liczbę w poprawnym formacie np. 4");
+
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("wprowadzona liczba jest poza dopuszczalnym zakresem");
+                    Console.WriteLine("zakres liczb: <0;4 294 967 295>");
+                }
+                catch (ArgumentNullException)
+                {
+                    Console.WriteLine("pusta wartość \n");
+                }
+                Console.WriteLine("wprowadź poprawną wartość");
+
+
+
+
+
+
+                
+            }
+            Console.WriteLine("Liczba całkowita: {0}", number);
+            Console.ReadKey();
+        } 
+        
+    }
+}
