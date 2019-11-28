@@ -1,0 +1,39 @@
+# fabiol
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace wskazniki
+{
+    class Program
+    {
+        unsafe static void Main(string[] args)
+        {
+            char* x;
+            char letter = 'a';
+            x = &letter;
+
+            Console.WriteLine("znak: {0}", letter);
+            //Console.WriteLine("adres w pamieci {0}", *x); //wartosć zmiennej
+            Console.WriteLine("adres w pamieci {0}", (int)x);
+
+            double number;
+            double* numberAddress;
+
+
+            number = 10;
+            numberAddress = &number;
+            Console.WriteLine("liczba wynosi: {0}", *numberAddress);
+            Console.WriteLine("adres zmiennej wynosi: {0}", (int)numberAddress);
+            Console.WriteLine("liczba wynosi: {0}", numberAddress->ToString());
+
+
+
+
+
+            Console.ReadKey();
+        }
+    }
+}
